@@ -11,7 +11,7 @@ int estado_botao2 = 0;
 char vogais[] = {'a', 'e', 'i', 'o', 'u'};
 int contagem_vogal = 0;
 char mensagem[6];
-char mensagem2[17]; // Ajustar tamanho do buffer para 17 (16 + 1 para o terminador nulo)
+char mensagem2[17]; 
 int contagem_de_letras = 0;
 bool escolha = true;
 bool escolha_Ino = false;
@@ -66,7 +66,7 @@ void loop() {
                 while (!mensagemRecebida) {
                     if (Serial.available() > 0) {
                         int bytesRead = Serial.readBytesUntil('\n', mensagem2, 16);
-                        mensagem2[bytesRead] = '\0'; // Adicionar o caractere nulo no final
+                        mensagem2[bytesRead] = '\0'; 
                         mensagemRecebida = true;
                         delay(1000);
                     }
@@ -77,7 +77,7 @@ void loop() {
                 lcd.setCursor(0, 1);
                 lcd.print(mensagem2);
                 
-                delay(7000);  // Exibe a mensagem por 5 segundos
+                delay(7000); 
                 mensagemRecebida = false;
                 exibirMenu();
                 escolha = true;
